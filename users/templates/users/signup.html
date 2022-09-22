@@ -1,0 +1,110 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <!-- <title>VCT TEA</title> -->
+  <link rel="stylesheet" href="{% static 'users.css' %}">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper color">
+          <a href="#" class="brand-logo"><img class="responsive-img logo" src="{% static 'img/VCT TEA(60X60).jpg' %}"></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
+            <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
+            <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
+            <li><a href="#"><span class="yellow-text">Login</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav indigo lighten-3" id="mobile-demo">
+        <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
+        <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
+        <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
+        <li><a href="#"><span class="yellow-text">Login</span></a></li>
+      </ul>
+    <!-- <form action="" method="POST"> -->
+        <div class="row">
+            <form class="col s12" action="{% url 'users:signup' %}" method="POST">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input id="username" type="text">
+                      <label class="active" for="username">Username</label>
+                    </div>
+                </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="first_name" type="text" class="validate">
+                  <label class="active" for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label class="active" for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password" type="password" class="validate">
+                  <label class="active" for="password">Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="password2" type="password" class="validate">
+                  <label class="active" for="password2">Confirm Password</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate">
+                  <label class="active" for="email">Email</label>
+                </div>
+              </div>
+              <button type="submit" class="waves-effect waves-light btn color center-align">Sign Up</button>
+            </form>
+          </div>
+    <!-- </form> -->
+    <div class="center-align">
+        <p>
+            Already have an account?<br>
+            <a class="waves-effect waves-red" href="{% url 'users:signin' %}">
+                SIGNIN
+            </a>
+        </p>
+    </div>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    {% endfor %}
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+        // $('.parallax').parallax();
+        // $('#demo-carousel').carousel();
+           
+        //    setInterval(function() {
+        //      $('#demo-carousel').carousel('next');
+        //    }, 2000);  
+    });
+  </script>
+</body>
+</html>
