@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'recipies',
     'shop',
     'authentication',
+    'users',
 ]
 
 MIDDLEWARE = [
