@@ -25,7 +25,8 @@ urlpatterns = [
     path('', views.home),
     path('recipes/', include('recipies.urls')),
     path('shop/',include('shop.urls')),
-    path('authenticate/',include('authentication.urls')),
+    path('users/',include('users.urls')),
+    # path('authenticate/',include('authentication.urls')),
 ]
 
 urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
