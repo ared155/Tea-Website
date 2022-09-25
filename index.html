@@ -1,0 +1,198 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>VCT TEA</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+
+<body>
+  <!-- navbar -->
+  <nav>
+    <div class="nav-wrapper color">
+      <a href="#" class="brand-logo"><img class="responsive-img logo" src="{% static 'img/VCT TEA(60X60).jpg' %}"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#"><span class="yellow-text">Home</span></a></li>
+        <li><a href="#"><span class="yellow-text">About</span></a></li>
+        <li><a href="#"><span class="yellow-text">Contact</span></a></li>
+        <li><a href="#"><span class="yellow-text">Login</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav indigo lighten-3" id="mobile-demo">
+    <li><a href="#"><span class="yellow-text">Home</span></a></li>
+    <li><a href="#"><span class="yellow-text">About</span></a></li>
+    <li><a href="#"><span class="yellow-text">Contact</span></a></li>
+    <li><a href="#"><span class="yellow-text">Login</span></a></li>
+  </ul>
+  <!-- video -->
+  <!-- <div class="parallax-container"> -->
+    <!-- <div class="parallax"> -->
+      <!-- <div class="video-container"> -->
+        <!-- <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe> -->
+        <!-- <video width="1600" height="600" controls autoplay loop>
+            <source src="/VCT Logo/home_page_video.mp4" type="video/mp4">
+          </video>
+      </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+  <div class="center-align hide-on-med-and-down"  style="background-color: transparent;">
+    <!-- <video autoplay loop> -->
+      <!-- <iframe src="img/pexels-charlotte-may-5929419.mp4" width="1400" height="600" frameBorder="0"></iframe> -->
+      <!-- <source src="img/pexels-charlotte-may-5929419.mp4" type="video/mp4">
+      <source src="myvid.ogg" type="video/ogg">
+    </video>  -->
+    <iframe src="{% static 'img/pexels-charlotte-may-5929419.mp4' %}" width="1400" height="600" frameBorder="0" allowtransparency="true"></iframe>
+  </div>
+  <!-- <div class="row ">
+    <div class="col s4 l12">
+      <video width="1600" height="600" autoplay loop>
+        <source src="img/pexels-charlotte-may-5929419.mp4" type="video/mp4">
+      </video>
+    </div> -->
+    <!-- <div class="col s12 l6 offset-l1">
+      <h2 class="indigo-text text-darken-4 card-font">Darjeeling Tea</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+    </div> -->
+  </div>
+  <!-- recipies -->
+  <section class="recipies">
+    <div class="container">
+      <h2>Recipes</h2>
+      <div class="row">
+        <div class="card">
+          <div class="col s10 m10 l4">
+            <div class="card">
+              <div class="card-image">
+                <!-- {% load static %} -->
+                <img src= "{% static 'img/pinkGauva.webp' %}" alt="TEA PIC">
+                <span class="card-title"></span>
+                <a class="btn-floating halfway-fab waves-effect waves-red color" href="{% url 'recipes:recipe_detail' slug='pink-guava-and-kaffir' %}"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <span class="card-font">Pink Guava and Kaffir</span>
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s10 m10 l4">
+          <div class="card center-align">
+            <div class="card-image">
+              <img src="{% static 'img/vanillaImperial.jpg' %}">
+              <span class="card-title"></span>
+              <a class="btn-floating halfway-fab waves-effect waves-red color" href="{% url 'recipes:recipe_detail' slug='vanilla-imperial' %}"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <span class="card-font">Vanilla Imperial</span>
+              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s10 m10 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="{% static 'img/kahwaDelight.webp' %}">
+              <span class="card-title card-font"></span>
+              <a class="btn-floating halfway-fab waves-effect waves-red color" href="{% url 'recipes:recipe_detail' slug='kashmiri-kahwa-delight' %}"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <span class="card-font">Kashmiri Kahwa Delight</span>
+              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center-align">
+        <a class="waves-effect waves-red btn-large color" href="{% url 'recipes:recipe_list' %}"><i class="material-icons right">add</i>EXPLORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- parallax -->
+  <div class="parallax-container">
+    <div class="parallax"><img src="{% static 'img/parallax_image.jpg' %}"></div>
+  </div>
+
+  <!-- photo / grid -->
+  <section class="container section" id="photos">
+    <h2>Assorted Collection</h2>
+    <div class="row">
+      <div class="col s12 l4">
+          <img src="{% static 'img/pinkGauva.webp' %}" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l6 offset-l1">
+        <h2 class="indigo-text text-darken-4 card-font">Darjeeling Tea</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l4 offset-l1 push-l7">
+          <img src="{% static 'img/vanillaImperial.jpg' %}" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l6 offset-l1 pull-l5 right-align">
+        <h2 class="indigo-text text-darken-4 card-font">Bold Spice Tea</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l4">
+          <img src="{% static 'img/kahwaDelight.webp' %}" alt="" class="responsive-img materialboxed">
+      </div>
+      <div class="col s12 l6 offset-l1">
+        <h2 class="indigo-text text-darken-4 card-font">Royal Saffrom Tea</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!--carousel-->
+
+  <div class="carousel" id="demo-carousel">
+    <h2>Review</h2>
+    <a class="carousel-item" href="#one!"><img src="{% static 'img/pinkGauva.webp' %}"></a>
+ 
+    <a class="carousel-item" href="#two!"><img src="{% static 'img/kahwaDelight.webp' %}"></a>
+ 
+    <a class="carousel-item" href="#three!"><img src="{% static 'img/parallax_image.jpg' %}"></a>
+ 
+    <a class="carousel-item" href="#four!"><img src="{% static 'img/pinkGauva.webp' %}"></a>
+ 
+    <a class="carousel-item" href="#five!"><img src="{% static 'img/vanillaImperial.jpg' %}"></a>
+ 
+  </div>
+  <!-- services / tabs -->
+
+  <!-- parallax -->
+
+  <!-- contact form -->
+
+  <!-- footer -->
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.parallax').parallax();
+        $('#demo-carousel').carousel();
+           
+           setInterval(function() {
+             $('#demo-carousel').carousel('next');
+           }, 2000);  
+    });
+  </script>
+</body>
+</html>
