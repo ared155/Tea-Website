@@ -1,0 +1,64 @@
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <title>VCT TEA</title>
+  <link rel="stylesheet" href="{% static 'shop.css' %}">
+</head>
+<body style="background-color: #f4ebd0;">
+  <!-- navbar -->
+  <nav>
+    <div class="nav-wrapper color">
+      <a href="http://127.0.0.1:8000/" class="brand-logo"><img class="responsive-img logo" src="{% static 'img/VCT TEA(60X60).jpg' %}"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
+        <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
+        <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
+        <li><a href="{% url 'users:signin' %}"><span class="yellow-text">Login</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav indigo lighten-3" id="mobile-demo">
+    <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
+    <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
+    <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
+    <li><a href="{% url 'users:signin' %}"><span class="yellow-text">Login</span></a></li>
+  </ul>
+    <!-- <h2>PRODUCT DETAIL PAGE</h2> -->
+    <!-- <div class="recipe_detail"> -->
+        <h2>{{product.title}}</h2>
+        <div class="product center-align">
+            <!-- <img src="{{product.thumb.url}}"/>
+            <pre><p>{{product.body}}</p></pre>
+            <p>{{product.price}}</p> -->
+            <div class="row">
+                <div class="col s12 l4">
+                    <img src="{{product.thumb.url}}" alt="" class="responsive-img z-depth-4">
+                </div>
+                <div class="col s12 l6 product-body">
+                  <!-- <h2 class="indigo-text text-darken-4 card-font">{{product.title}}</h2> -->
+                <p>
+                    {% autoescape on %}
+                    {{product.body}}
+                    {% endautoescape %}
+                </p>
+                  <p><strong>Rs.{{product.price}}</strong></p>
+                  <!-- <p class="center-align"> -->
+                    <a class="waves-effect waves-red btn-large color" href="#"><i class="material-icons right">add_shopping_cart</i>ADD TO CART</a>
+                  <!-- </p> -->
+                </div>
+              </div>
+        </div>
+    <!-- </div> -->
+</body>
+</html>
