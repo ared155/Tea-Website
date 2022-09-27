@@ -13,11 +13,10 @@
   <!-- <title>VCT TEA</title> -->
   <link rel="stylesheet" href="{% static 'users.css' %}">
 </head>
-
-<body>
+<body style="background-color: #f4ebd0; overflow: hidden;">
     <nav>
         <div class="nav-wrapper color">
-          <a href="#" class="brand-logo"><img class="responsive-img logo" src="{% static 'img/VCT TEA(60X60).jpg' %}"></a>
+          <a href="http://127.0.0.1:8000/" class="brand-logo"><img class="responsive-img logo" src="{% static 'img/VCT TEA(60X60).jpg' %}"></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
@@ -35,8 +34,12 @@
         <li><a href="#"><span class="yellow-text">Login</span></a></li>
       </ul>
     <!-- <form action="" method="POST"> -->
+      <div class="signin" style="margin-top: -150px;">
+        <div class="center-align hide-on-med-and-down">
+          <img src="{% static 'img/VCT TEA.png' %}" style="height: 180px; margin-bottom: 20px;">
+        </div>
         <div class="row">
-            <form class="col s12" action="{% url 'users:signup' %}" method="POST">
+            <form class="col s12" action="{% url 'users:signup' %}" method="POST" style="margin: 0px;">
                 {% csrf_token %}
 
                 <div class="row">
@@ -93,6 +96,7 @@
     </button>
     </div>
     {% endfor %}
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script>

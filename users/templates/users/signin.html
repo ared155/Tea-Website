@@ -13,51 +13,54 @@
   <!-- <title>VCT TEA</title> -->
   <link rel="stylesheet" href="{% static 'users.css' %}">
 </head>
-<body>
+<body style="background-color: #f4ebd0; overflow: hidden;">
     <nav>
-        <div class="nav-wrapper color">
-          <a href="#" class="brand-logo"><img class="responsive-img logo" src="{% static 'img/VCT TEA(60X60).jpg' %}"></a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
-            <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
-            <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
-            <li><a href="{% url 'users:signin' %}"><span class="yellow-text">Login</span></a></li>
-          </ul>
-        </div>
-      </nav>
+      <div class="nav-wrapper color">
+        <a href="http://127.0.0.1:8000/" class="brand-logo"><img class="responsive-img logo" src="{% static 'img/VCT TEA(60X60).jpg' %}"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
+          <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
+          <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
+          <li><a href="{% url 'users:signin' %}"><span class="yellow-text">Login</span></a></li>
+        </ul>
+      </div>
+    </nav>
     
-      <ul class="sidenav indigo lighten-3" id="mobile-demo">
-        <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
-        <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
-        <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
-        <li><a href="{% url 'users:signin' %}"><span class="yellow-text">Login</span></a></li>
-      </ul>
-    <div class="signin">
-        <div class="row">
-            <form class="col s12" action="{% url 'users:signin' %}" method="POST">
-                {% csrf_token %}
-    
-                <div class="row">
-                    <div class="input-field col s12">
-                      <input id="username" type="text" class="validate">
-                      <label class="active" for="username">Username</label>
-                    </div>
-                </div>
-    
-                <div class="row">
-                    <div class="input-field col s12">
-                      <input id="password" type="password" class="validate">
-                      <label class="active" for="password">Password</label>
-                    </div>
-                </div>
-                <button type="submit" class="waves-effect waves-light btn color center-align">Sign In</button>
-            </form>
-        </div>
-        <div class="center-align">
-            Visiting for the first time?
-            <a class="waves-effect waves-light btn-small color" href="{% url 'users:signup' %}">SignUp</a>
-        </div>
+    <ul class="sidenav indigo lighten-3" id="mobile-demo">
+      <li><a href="http://127.0.0.1:8000/"><span class="yellow-text">Home</span></a></li>
+      <li><a href="{% url 'recipes:recipe_list' %}"><span class="yellow-text">Recipes</span></a></li>
+      <li><a href="{% url 'shop:categories' %}"><span class="yellow-text">Shop</span></a></li>
+      <li><a href="{% url 'users:signin' %}"><span class="yellow-text">Login</span></a></li>
+    </ul>
+    <div class="signin" style="margin-top: -50px;">
+      <div class="center-align hide-on-med-and-down">
+        <img src="{% static 'img/VCT TEA.png' %}" style="height: 200px; margin-bottom: 60px;">
+    </div>
+      <div class="row">
+        <form class="col s12" action="{% url 'users:signin' %}" method="POST">
+            {% csrf_token %}
+  
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="username" type="text" class="validate">
+                <label class="active" for="username">Username</label>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label class="active" for="password">Password</label>
+              </div>
+            </div>
+            <button type="submit" class="waves-effect waves-light btn color center-align">Sign In</button>
+        </form>
+      </div>
+      <div class="center-align">
+          Visiting for the first time?
+          <a class="waves-effect waves-light btn-small color" href="{% url 'users:signup' %}">SignUp</a>
+      </div>
     </div>
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
@@ -72,12 +75,6 @@
   <script>
     $(document).ready(function(){
         $('.sidenav').sidenav();
-        // $('.parallax').parallax();
-        // $('#demo-carousel').carousel();
-           
-        //    setInterval(function() {
-        //      $('#demo-carousel').carousel('next');
-        //    }, 2000);  
     });
   </script>
 </body>
